@@ -1,0 +1,21 @@
+.Header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.Header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.Header nav ul li a {
+  color: white;
+  text-decoration: none;
+}

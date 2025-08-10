@@ -1,0 +1,74 @@
+.portfel{
+    margin-bottom: 228px;
+}
+
+.portfel .portfel__block{
+    display: flex;
+    gap: 24px;
+}
+
+.portfel .portfel__block .item{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    justify-content: start;
+    width: 50%;
+}
+
+.portfel .portfel__block .item .top__img{
+    height: 448px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfel .portfel__block .item .top__img:first-child{
+    background: #FF6300;
+}
+
+.portfel .portfel__block .item .img2{
+    background: #20BD4F !important;
+}
+
+.portfel .portfel__block .item picture{
+    width: 100%;
+    display: block;
+}
+
+.portfel .portfel__block .item img{
+    width: 240px;
+    height: 240px;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+@media (max-width: 1260px) {
+    .portfel{
+        margin-bottom: 130px;
+    }
+
+    .portfel .portfel__block .item .top__img{
+        height: 270px;
+    }
+}
+
+@media (max-width: 880px) {
+    .portfel{
+        margin-bottom: 50px;
+    }
+
+    .portfel .portfel__block{
+        flex-direction: column;
+    }
+
+    .portfel .portfel__block .item{
+        gap: 16px;
+        width: 100%;
+    }
+
+    .portfel .portfel__block .item .top__img{
+        height: 270px;
+    }
+}

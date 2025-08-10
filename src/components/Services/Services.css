@@ -1,0 +1,35 @@
+.services{
+    margin-bottom: 48px;
+}
+
+.services .services__block{
+    margin-bottom: 204px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.services .services__block .item{
+    width: 50%;
+}
+
+.services .svg{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1260px) {
+    .services .services__block{
+        margin-bottom: 130px;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 880px) {
+    .services .services__block{
+        flex-direction: column;
+    }
+
+    .services .services__block{
+        margin-bottom: 100px;
+    }
+}

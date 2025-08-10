@@ -1,0 +1,36 @@
+.materials{
+    margin-bottom: 152px;
+}
+
+.materials .materials__block{
+    display: flex;
+    gap: 48px;
+}
+
+.materials .materials__block p{
+    width: 50%;
+}
+
+@media (max-width: 1260px) {
+    .materials{
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 880px) {
+    .materials{
+        margin-bottom: 60px;
+    }
+
+    .materials .materials__block{
+        flex-direction: column;
+    }
+
+    .materials .materials__block p{
+        width: 100%;
+    }
+
+    .materials .materials__block p br{
+        display: block;
+    }
+}
