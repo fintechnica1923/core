@@ -7,6 +7,9 @@
 body{
     background: #161415;
     font-family: "Manrope", sans-serif;
+    color: #FFF;
+    font-size: 24px;
+    line-height: 32px;
 }
 
 .container{
@@ -48,7 +51,7 @@ body{
 }
 
 .red__span{
-    color: #FFF;
+    color: rgb(240, 20, 19);
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -57,6 +60,19 @@ body{
 
 a{
     text-decoration: none;
+    color: rgb(240, 20, 19);
+}
+
+p {
+    color: #FFF;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+span {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 500;
 }
 body {
   margin: 0;

@@ -19,6 +19,18 @@
     width: 50%;
 }
 
+.concept__block .block__left p{
+    color: #FFF;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.concept__block .block__left span{
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 500;
+}
+
 @media (max-width: 1260px) {
     .concept__block{
         gap: 24px;
