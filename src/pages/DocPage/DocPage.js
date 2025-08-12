@@ -92,7 +92,6 @@ const DocPage = () => {
       <footer className="footer">
         <div className="footer__section">
           <a href="#">курс по финтеху</a>
-          {/*  <a href="#">сертификат</a> */}
         </div>
 
         <div className="footer__section footer__section--center">

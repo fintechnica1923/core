@@ -1,0 +1,75 @@
+.certificate-viewer {
+  padding: 80px 40px 40px 40px;
+}
+
+.certificate-viewer h1 {
+  color: #FFF;
+  font-size: 56px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0 0 80px 0;
+  text-align: left;
+}
+
+.certificate-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 20px;
+}
+
+.certificate-card {
+  text-align: center;
+}
+
+.certificate-preview {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.certificate-missing {
+  color: #ff6b6b;
+  padding: 20px;
+  border: 2px dashed #ff6b6b;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.certificate-card h3 {
+  margin-top: 0;
+}
+
+.certificate-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.language-group {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.language-group h4 {
+  margin: 0;
+  color: white;
+  font-size: 18px;
+}
+
+.language-group a {
+  margin: 0;
+  color: white;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.language-group a:hover {
+  text-decoration: underline;
+}

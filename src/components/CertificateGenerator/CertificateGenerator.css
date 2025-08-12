@@ -1,0 +1,236 @@
+.certificate-generator {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background: #161415;
+  min-height: 100vh;
+}
+
+.controls {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.controls h2 {
+  color: #FFF;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.controls h3 {
+  color: #FFF;
+  margin: 30px 0 15px 0;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-generate {
+  background: rgb(240, 20, 19);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn-generate:hover {
+  background: rgba(240, 20, 19, 0.8);
+}
+
+.name-selector {
+  margin: 20px 0;
+}
+
+.name-selector label {
+  color: #FFF;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.name-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgba(240, 20, 19, 0.5);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFF;
+  font-size: 12px;
+}
+
+.instructions {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(240, 20, 19, 0.1);
+  border-radius: 6px;
+}
+
+.instructions h3 {
+  margin-top: 0;
+  color: rgb(240, 20, 19);
+}
+
+.instructions p {
+  color: #FFF;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.participants-list {
+  margin-top: 20px;
+}
+
+.participants-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.participant-item {
+  padding: 8px 12px;
+  color: #FFF;
+  font-size: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background-color 0.2s;
+}
+
+.participant-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.participant-item.selected {
+  background: rgba(240, 20, 19, 0.2);
+  color: rgb(240, 20, 19);
+}
+
+.participant-item:last-child {
+  border-bottom: none;
+}
+
+.certificate-preview {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.certificate {
+  width: 1200px;
+  height: 800px;
+  background: #2a2a2a;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: scale(0.6);
+  transform-origin: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.certificate-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.certificate-hexagon {
+  width: 100px;
+  height: 100px;
+  background: #FFF;
+  margin-bottom: 60px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.certificate-name {
+  color: #FFF;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+}
+
+.certificate-description {
+  color: #FFF;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.certificate-course-name {
+  color: rgb(240, 20, 19);
+  font-weight: 600;
+}
+
+.certificate-lectures {
+  color: #FFF;
+  font-size: 18px;
+  margin-bottom: 80px;
+}
+
+.certificate-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  padding-top: 60px;
+}
+
+.certificate-date {
+  color: #AAA;
+  font-size: 14px;
+}
+
+.certificate-signature {
+  text-align: center;
+}
+
+.signature-line {
+  width: 200px;
+  height: 1px;
+  background: #FFF;
+  margin-bottom: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 24px;
+  color: #FFF;
+  border: none;
+  text-align: center;
+}
+
+.certificate-director {
+  color: #AAA;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Новый минималистичный дизайн без декоративных элементов */
+
+@media (max-width: 1400px) {
+  .certificate-generator {
+    flex-direction: column;
+  }
+  
+  .controls {
+    width: 100%;
+  }
+  
+  .certificate {
+    transform: scale(0.4);
+  }
+}
