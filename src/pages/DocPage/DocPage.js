@@ -74,7 +74,7 @@ const DocPage = () => {
               <div className="topic-block__full-date">{topic.date}</div>
               <h2 className="topic-block__title" tabIndex="0" role="button" aria-expanded={openTopic === index} onClick={() => handleTopicClick(index)}>
                 {topic.title}
-                <span className="topic-block__date">{topic.date.slice(0, 5).replace(' ', '.')}</span>
+                <span className="topic-block__date">{topic.date.slice(0, 5).replace(' ', '.').replace('се', '09').replace('ок', '10')}</span>
               </h2>
               <div className="topic-block__more">
                 <div className="topic-block__avatars">
@@ -82,7 +82,7 @@ const DocPage = () => {
                     <img key={i} src={avatar} alt={`Avatar${i + 1}`} className="topic-block__avatar" />
                   ))}
                 </div>
-                <p className="topic-block__text" dangerouslySetInnerHTML={{ __html: topic.text }} />
+                <p className="text-xl" style={{color: 'var(--accent-color)', maxWidth: '800px', margin: '0 auto'}} dangerouslySetInnerHTML={{ __html: topic.text }} />
               </div>
             </div>
           ))}
@@ -99,7 +99,6 @@ const DocPage = () => {
         </div>
 
         <div className="footer__section footer__section--right">
-          <a href="#">22 сентября — 29 октября</a>
           {/* <a href="#">фак</a> */}
         </div>
 
