@@ -14,22 +14,42 @@ const CertsPage = () => {
 
   const ruOnlyCertificates = ['Gleb Yuchenkov', 'Marina Ovchinnikova', 'Vladislav Golubev', 'Yury Chekashkin'];
 
-  const downloadCertificate = (name, lang, fmt) => {
+  const downloadCertificate = async (name, lang, fmt) => {
     const extension = fmt === 'PNG' ? '@2x.png' : '.pdf';
     const originalFileName = `${name}${extension}`;
     const filePath = `/certificate/${lang}/${originalFileName}`;
     
     // Create clean filename with language prefix
     const langPrefix = lang === 'RU' ? 'RU' : 'ENG';
-    const cleanName = name.replace(/\s+/g, '_'); // Replace spaces with underscores
+    const cleanName = name.replace(/\s+/g, '_');
     const downloadFileName = fmt === 'PDF' 
       ? `${langPrefix}_${cleanName}.pdf` 
       : `${langPrefix}_${cleanName}.png`;
     
-    const link = document.createElement('a');
-    link.href = filePath;
-    link.download = downloadFileName;
-    link.click();
+    try {
+      // Fetch the file as blob to force download with custom filename
+      const response = await fetch(filePath);
+      const blob = await response.blob();
+      
+      // Create download link with blob URL
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      link.download = downloadFileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Clean up blob URL
+      window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+      console.error('Download failed:', error);
+      // Fallback to direct link
+      const link = document.createElement('a');
+      link.href = filePath;
+      link.download = downloadFileName;
+      link.click();
+    }
   };
 
   return (
