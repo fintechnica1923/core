@@ -24,13 +24,9 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Configure AWS credentials for Yandex
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_SECOND }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_SECOND }}
-          aws-region: ru-central1
-
       - name: Deploy to Yandex Object Storage
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SECOND }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_SECOND }}
         run: |
-          aws s3 sync ./dist s3://xn--80ajibkpb2bpo.xn--p1ai             --endpoint-url https://storage.yandexcloud.net             --delete             --acl public-read             --cache-control "no-cache"
+          aws s3 sync ./build s3://xn--80ajibkpb2bpo.xn--p1ai             --endpoint-url https://storage.yandexcloud.net             --delete             --acl public-read             --cache-control "no-cache"
