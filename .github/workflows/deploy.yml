@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main   # или твоya рабочая ветка
+  workflow_dispatch: {}
 
 jobs:
   deploy:
@@ -17,6 +18,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -24,9 +26,34 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Yandex Object Storage
+      - name: Deploy to Yandex Object Storage (static assets with long cache)
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SECOND }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_SECOND }}
+          AWS_REGION: ru-central1
+          AWS_DEFAULT_REGION: ru-central1
+          AWS_S3_FORCE_PATH_STYLE: "true" # buckets with dots work reliably
         run: |
-          aws s3 sync ./build s3://xn--80ajibkpb2bpo.xn--p1ai             --endpoint-url https://storage.yandexcloud.net             --delete             --acl public-read             --cache-control "no-cache"
+          # Note: use the BUCKET NAME only (no .website.yandexcloud.net suffix)
+          # 1) Static assets: immutable long cache
+          aws s3 sync ./build/static s3://xn--80ajibkpb2bpo.xn--p1ai/static \
+            --endpoint-url https://storage.yandexcloud.net \
+            --delete \
+            --acl public-read \
+            --cache-control "public, max-age=31536000, immutable"
+
+      - name: Deploy to Yandex Object Storage (HTML and rest, no-cache)
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SECOND }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_SECOND }}
+          AWS_REGION: ru-central1
+          AWS_DEFAULT_REGION: ru-central1
+          AWS_S3_FORCE_PATH_STYLE: "true"
+        run: |
+          # 2) HTML and root files: no-cache to reflect updates immediately
+          aws s3 sync ./build s3://xn--80ajibkpb2bpo.xn--p1ai \
+            --endpoint-url https://storage.yandexcloud.net \
+            --delete \
+            --acl public-read \
+            --cache-control "no-cache" \
+            --exclude "static/*"
