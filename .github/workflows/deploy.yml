@@ -39,7 +39,6 @@ jobs:
           aws s3 sync ./build/static s3://xn--80ajibkpb2bpo.xn--p1ai/static \
             --endpoint-url https://storage.yandexcloud.net \
             --delete \
-            --acl public-read \
             --cache-control "public, max-age=31536000, immutable"
 
       - name: Deploy to Yandex Object Storage (HTML and rest, no-cache)
@@ -54,6 +53,5 @@ jobs:
           aws s3 sync ./build s3://xn--80ajibkpb2bpo.xn--p1ai \
             --endpoint-url https://storage.yandexcloud.net \
             --delete \
-            --acl public-read \
             --cache-control "no-cache" \
             --exclude "static/*"
