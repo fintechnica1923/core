@@ -5,6 +5,8 @@ import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
 import DocPage from './pages/DocPage/DocPage';
 import CertsPage from './pages/CertsPage/CertsPage';
+import CertificatesPage from './pages/CertificatesPage/CertificatesPage';
+import CertificateGeneratorPage from './pages/CertificateGeneratorPage/CertificateGeneratorPage';
 
 function App() {
   const location = useLocation();
@@ -17,7 +19,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/course" element={<DocPage />} />
           <Route path="/certs" element={<CertsPage />} />
-          {/* Add other routes here */}
+          <Route path="/certificates" element={<CertificatesPage />} />
+          <Route path="/certificate-generator" element={<CertificateGeneratorPage />} />
         </Routes>
       </main>
       {!hideFooter && <Footer />}
