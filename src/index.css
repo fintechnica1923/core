@@ -13,7 +13,7 @@ body{
 }
 
 .container{
-    max-width: 1248px;
+    max-width: 800px;
     margin: 0 auto;
 
     
@@ -64,9 +64,162 @@ a{
 }
 
 p {
-    color: #FFF;
-    font-size: 24px;
-    line-height: 32px;
+    color: var(--ds-gray-1000);
+    font-size: var(--xs-text-size, 1rem);
+    line-height: 1.5rem;
+    font-weight: var(--xs-text-weight, 400);
+    letter-spacing: var(--xs-text-letter-spacing, initial);
+    margin: 24px 0;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 640px) {
+    p {
+        font-size: var(--sm-text-size, 1rem);
+        line-height: var(--sm-text-line-height, 1.5rem);
+        font-weight: var(--sm-text-weight, 400);
+        letter-spacing: var(--sm-text-letter-spacing, initial);
+    }
+}
+
+@media (min-width: 768px) {
+    p {
+        font-size: var(--smd-text-size, 1rem);
+        line-height: var(--smd-text-line-height, 1.5rem);
+        font-weight: var(--smd-text-weight, 400);
+        letter-spacing: var(--smd-text-letter-spacing, initial);
+    }
+}
+
+@media (min-width: 1024px) {
+    p {
+        font-size: var(--md-text-size, 1rem);
+        line-height: var(--md-text-line-height, 1.5rem);
+        font-weight: var(--md-text-weight, 400);
+        letter-spacing: var(--md-text-letter-spacing, initial);
+    }
+}
+
+@media (min-width: 1280px) {
+    p {
+        font-size: var(--lg-text-size, 1.125rem);
+        line-height: var(--lg-text-line-height, 1.5rem);
+        font-weight: var(--lg-text-weight, 400);
+        letter-spacing: var(--lg-text-letter-spacing, initial);
+    }
+}
+
+ul, ol {
+    color: var(--ds-gray-1000);
+    font-size: var(--xs-text-size, 1rem);
+    line-height: var(--xs-text-line-height, 1.5rem);
+    font-weight: var(--xs-text-weight, 400);
+    letter-spacing: var(--xs-text-letter-spacing, initial);
+}
+
+ul {
+    padding-left: 16px;
+}
+
+ol {
+    padding-left: 16px;
+}
+
+li {
+    color: var(--ds-gray-1000);
+    font-size: var(--xs-text-size, 1rem);
+    line-height: var(--xs-text-line-height, 1.5rem);
+    font-weight: var(--xs-text-weight, 400);
+    letter-spacing: var(--xs-text-letter-spacing, initial);
+    margin: 16px 0;
+}
+
+/* Responsive breakpoints for lists */
+@media (min-width: 640px) {
+    ul, ol, li {
+        font-size: var(--sm-text-size, 1rem);
+        line-height: var(--sm-text-line-height, 1.5rem);
+        font-weight: var(--sm-text-weight, 400);
+        letter-spacing: var(--sm-text-letter-spacing, initial);
+    }
+}
+
+@media (min-width: 768px) {
+    ul, ol, li {
+        font-size: var(--smd-text-size, 1rem);
+        line-height: var(--smd-text-line-height, 1.5rem);
+        font-weight: var(--smd-text-weight, 400);
+        letter-spacing: var(--smd-text-letter-spacing, initial);
+    }
+}
+
+@media (min-width: 1024px) {
+    ul, ol, li {
+        font-size: var(--md-text-size, 1rem);
+        line-height: var(--md-text-line-height, 1.5rem);
+        font-weight: var(--md-text-weight, 400);
+        letter-spacing: var(--md-text-letter-spacing, initial);
+    }
+}
+
+@media (min-width: 1280px) {
+    ul, ol, li {
+        font-size: var(--lg-text-size, 1.125rem);
+        line-height: var(--lg-text-line-height, 1.5rem);
+        font-weight: var(--lg-text-weight, 400);
+        letter-spacing: var(--lg-text-letter-spacing, initial);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--ds-gray-1000);
+    font-size: var(--xs-text-size, 1.5rem);
+    line-height: var(--xs-text-line-height, 2rem);
+    font-weight: var(--xs-text-weight, 600);
+    letter-spacing: var(--xs-text-letter-spacing, -0.02em);
+    text-align: center;
+}
+
+/* Responsive breakpoints for headings */
+@media (min-width: 640px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: var(--sm-text-size, 1.5rem);
+        line-height: var(--sm-text-line-height, 2rem);
+        font-weight: var(--sm-text-weight, 600);
+        letter-spacing: var(--sm-text-letter-spacing, -0.02em);
+    }
+}
+
+@media (min-width: 768px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: var(--smd-text-size, 2rem);
+        line-height: var(--smd-text-line-height, 2.5rem);
+        font-weight: var(--smd-text-weight, 600);
+        letter-spacing: var(--smd-text-letter-spacing, -0.03em);
+    }
+}
+
+@media (min-width: 1024px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: var(--md-text-size, 2rem);
+        line-height: var(--md-text-line-height, 2.5rem);
+        font-weight: var(--md-text-weight, 600);
+        letter-spacing: var(--md-text-letter-spacing, -0.03em);
+    }
+}
+
+@media (min-width: 1280px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-size: var(--lg-text-size, 3.5rem);
+        line-height: var(--lg-text-line-height, 3.5rem);
+        font-weight: var(--lg-text-weight, 600);
+        letter-spacing: var(--lg-text-letter-spacing, -0.05em);
+    }
+}
+
+h2 {
+    letter-spacing: -0.03em;
+    line-height: 2.5rem;
 }
 
 span {

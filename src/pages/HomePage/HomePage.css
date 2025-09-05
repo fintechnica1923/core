@@ -1,1 +1,11 @@
+/* Override container width for HomePage */
+.HomePage .container {
+    max-width: 1248px;
+}
 
+/* Custom paragraph styles for HomePage */
+.HomePage p {
+    color: #FFF;
+    font-size: 24px;
+    line-height: 32px;
+}
