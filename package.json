@@ -19,7 +19,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run prebuild && react-scripts build",
+    "prebuild": "node scripts/generateBlogIndex.js && mkdir -p public/blog && cp src/blog/*.md public/blog/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

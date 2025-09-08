@@ -51,7 +51,7 @@ const BlogPost = () => {
             title: decodedSlug,
             content: content,
             date: new Date().toISOString().split('T')[0],
-            author: 'Саша/Миша'
+            author: 'ФИНТЕХНИКА'
           });
         }
       } catch (err) {

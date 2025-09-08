@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './BlogPage.css';
 import logo from '../../assets/logo.svg';
+import blogIndex from '../../data/blogIndex.json';
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
@@ -12,25 +13,8 @@ const BlogPage = () => {
       try {
         setLoading(true);
         
-        // Список всех доступных постов из src/blog
-        const postFiles = [
-          'Австралийский Исламский Банк',
-          'Авторы контента — новый средний класс',
-          'Алекса Рампелла',
-          'Американский банкинг',
-          'Антон Мусин про Open Banking',
-          'Бакальчук в «Основателеях»',
-          'Банк вместо ввода карты',
-          'Банк как стартовая точка для регулярных покупок',
-          'Банки на территории e-commerce 🇰🇿',
-          'Банковская альтернатива',
-          'Банковские сервисы через призму правил первых принципов',
-          'Банковское приложение как точка учёта и управления физическими активами',
-          'Белый Крузак и загородный дом в Петергофе',
-          'Блокчейн и Деньги',
-          'Больше чем банк  🇰🇿',
-          'Будущее денег'
-        ];
+        // Используем сгенерированный индекс постов
+        const postFiles = blogIndex;
         
         console.log('Loading posts:', postFiles);
 
@@ -72,10 +56,10 @@ const BlogPage = () => {
                   slug,
                   ...frontmatter,
                   content: match[2].substring(0, 200) + '...', // Preview
-                  excerpt: cleanContent.replace(/[#*`\[\]]/g, '').substring(0, 200) + '...', // Clean excerpt
+                  excerpt: cleanContent.replace(/[#*`\\[\]]/g, '').substring(0, 200) + '...', // Clean excerpt
                   tags: tags,
                   category: tags[0] || frontmatter.category || 'Блог',
-                  author: frontmatter.author || 'Саша/Миша'
+                  author: frontmatter.author || 'ФИНТЕХНИКА'
                 };
               } else {
                 // Если нет frontmatter, создаем базовую структуру
@@ -90,11 +74,11 @@ const BlogPage = () => {
                   slug,
                   title: slug.replace(/-/g, ' '),
                   content: content.substring(0, 200) + '...',
-                  excerpt: cleanContent.replace(/[#*`\[\]]/g, '').substring(0, 200) + '...',
+                  excerpt: cleanContent.replace(/[#*`\\[\]]/g, '').substring(0, 200) + '...',
                   date: new Date().toISOString().split('T')[0],
                   category: tags[0] || 'Блог',
                   tags: tags,
-                  author: 'Саша/Миша'
+                  author: 'ФИНТЕХНИКА'
                 };
               }
             } catch (error) {

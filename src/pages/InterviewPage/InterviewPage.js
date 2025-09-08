@@ -5,7 +5,6 @@ import logo from '../../assets/logo.svg';
 
 const InterviewPage = () => {
   const [people, setPeople] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // Статические данные о людях для интервью
