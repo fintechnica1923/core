@@ -1,4 +1,0 @@
-
-Лекция про Смартконтракты от Вышки https://youtu.be/Vq5C--4oZLI
-
-#hse #blockchain #smartcontract
