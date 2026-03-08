@@ -13,4 +13,4 @@
 
 На мой взгляд вышел довольно неплохой MVP, который не терпится потестить https://apps.apple.com/us/app/memphis-wallet-for-polkadot/id6449486816
 
-#memphis #crypto #wallet 
+#memphis #crypto #wallet #fintechnica

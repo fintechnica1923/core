@@ -9,4 +9,4 @@
 
 Источник: https://youtu.be/KPGfomTZYZU
 
-#ecom 
+#ecom #fintechnica

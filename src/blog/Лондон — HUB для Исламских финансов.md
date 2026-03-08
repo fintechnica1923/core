@@ -3,4 +3,4 @@
 
 Пока основной упор конечно идёт на Сукук (ценные бумаги), но перспективы развития впечатляют https://www.agbi.com/analysis/how-london-became-the-islamic-finance-capital-of-the-west/
 
-#islam #england 
+#islam #england #fintechnica

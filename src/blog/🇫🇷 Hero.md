@@ -7,4 +7,4 @@
 
 Платформа также имеет прозрачный андеррайтинг, чтобы предложить условия мгновенного финансирования, опираясь на собственный механизм данных и рисков; плюс бесшовная интеграция со сторонним программным обеспечением, включая ERP и инструменты учета https://fintechmagazine.com/articles/b2b-payments-startup-hero-secures-12mn-in-fresh-funding
 
-#france #startup 
+#france #startup #fintechnica 

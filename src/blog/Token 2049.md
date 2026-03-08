@@ -10,4 +10,4 @@
 
 Отрывок выступления Павла (на русском) https://youtu.be/NgB5WK4QQss?si=SpkfENFgxsbkrcGkt
 
-#durov #telegram #event #video 
+#durov #telegram #event #video  #fintechnica 

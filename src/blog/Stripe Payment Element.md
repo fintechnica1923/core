@@ -3,4 +3,4 @@
 
 Живое демо по ссылке https://stripe.com/docs/payments/payment-element
 
-#stripe
+#stripe #fintechnica 

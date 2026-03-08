@@ -6,4 +6,4 @@ What are the learning of Open Banking:
 2. Don`t let security kill the journey
 3. Construct an industry body
 
-#openfinance #11fs 
+#openfinance #11fs #fintechnica 

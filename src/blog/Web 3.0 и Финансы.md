@@ -3,4 +3,4 @@
 
 https://rb.ru/opinion/web-30-financial-system/
 
-#web3 
+#web3 #fintechnica 

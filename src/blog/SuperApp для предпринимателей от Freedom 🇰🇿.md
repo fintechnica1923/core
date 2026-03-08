@@ -5,4 +5,4 @@
 
 https://kapital-kz.turbopages.org/turbo/kapital.kz/s/finance/132764/aydos-zhumagulov-my-namereny-zapustit-superapp-dlya-predprinimateley.html
 
-#no 
+#freedom #fintechnica 

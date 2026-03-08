@@ -6,4 +6,4 @@
 
 С большим удовольствием послушал выпуск «Бизнес Номады», в котором Магжан и Анара Жумашевы рассказали про пройденные этапы и планы на будущее https://youtu.be/zm6XFna4i68
 
-#acquiring #payment #ioka #zhumashev
+#acquiring #payment #ioka #zhumashev #fintechnica 
