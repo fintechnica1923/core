@@ -1,73 +1,45 @@
-# React + TypeScript + Vite
+# Common — Fintech Educational Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fintech educational platform featuring a course, blog, essays, media library, hackathon write-ups, and consulting information. Content is primarily in Russian.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** + **TypeScript** with **Vite 7**
+- **Tailwind CSS v4** + **shadcn/ui** components
+- **React Router** for client-side routing
+- **react-markdown** + **remark-gfm** for rendering Markdown content
+- Custom Vite plugin (`vite-plugin-blog.ts`) for loading `.md` files as virtual modules
 
-## React Compiler
+## Sections
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `/` `/course` — **Курс** — An 8-part fintech course covering payments, credit, investments, crypto, anti-fraud, and more
+- `/blog` — **Лента** — Blog feed with search, tag filtering, and text-to-speech
+- `/essays` — **Эссе** — Long-form essays
+- `/media` — **Медиа** — Media content with YouTube embeds and audio
+- `/hackathons` — **Хакатоны** — Hackathon case studies
+- `/consulting` — **Консалтинг** — Consulting services and portfolio
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+The production build outputs to the `build/` directory.
+
+## Content
+
+Blog posts, essays, media entries, and hackathon write-ups are stored as Markdown files under `src/blog/`, `src/essays/`, `src/media/`, and `src/hackathons/` respectively. The custom Vite plugin automatically loads them at build time.
+
+Audio files for media entries are stored in `public/audio/`.
+
+## Deployment
+
+The project auto-deploys to Yandex Object Storage on push to `main` via GitHub Actions (`.github/workflows/deploy.yml`).
