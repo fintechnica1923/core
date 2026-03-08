@@ -1,0 +1,54 @@
+name: Deploy to Yandex Object Storage
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy static assets (long cache)
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SECOND }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_SECOND }}
+          AWS_REGION: ru-central1
+          AWS_DEFAULT_REGION: ru-central1
+          AWS_S3_FORCE_PATH_STYLE: "true"
+        run: |
+          aws s3 sync ./build/static s3://xn--80ajibkpb2bpo.xn--p1ai/static \
+            --endpoint-url https://storage.yandexcloud.net \
+            --delete \
+            --cache-control "public, max-age=31536000, immutable"
+
+      - name: Deploy HTML and root files (no-cache)
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_SECOND }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_SECOND }}
+          AWS_REGION: ru-central1
+          AWS_DEFAULT_REGION: ru-central1
+          AWS_S3_FORCE_PATH_STYLE: "true"
+        run: |
+          aws s3 sync ./build s3://xn--80ajibkpb2bpo.xn--p1ai \
+            --endpoint-url https://storage.yandexcloud.net \
+            --delete \
+            --cache-control "no-cache" \
+            --exclude "static/*"

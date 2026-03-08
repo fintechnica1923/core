@@ -14,6 +14,9 @@ export default defineConfig({
     blogPlugin("./src/media", "virtual:media-posts"),
     blogPlugin("./src/hackathons", "virtual:hackathon-posts"),
   ],
+  build: {
+    outDir: "build",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
