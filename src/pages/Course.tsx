@@ -70,6 +70,7 @@ const lectures = [
 export default function Course() {
   return (
     <div className="mx-auto max-w-[680px] px-4 sm:px-6">
+      <h1 className="sr-only">Курс</h1>
       <div className="space-y-12">
         <Accordion defaultValue={["item-0"]} className="w-full">
           {lectures.map((lecture, index) => (
@@ -85,7 +86,7 @@ export default function Course() {
                     <img
                       key={i}
                       src={src}
-                      alt=""
+                      alt={`Лектор ${i + 1}`}
                       className="size-[60px] rounded-full object-cover"
                     />
                   ))}

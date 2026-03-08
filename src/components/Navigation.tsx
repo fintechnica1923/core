@@ -18,9 +18,10 @@ export default function Navigation() {
       <Link to="/" className="hover:opacity-80 transition-opacity">
         <Logo className="h-6 w-auto text-foreground" />
       </Link>
-      <nav className="flex items-center gap-1 rounded-full border bg-muted/50 p-1">
+      <nav aria-label="Основная навигация" className="flex items-center gap-1 rounded-full border bg-muted/50 p-1">
         <Link
           to="/"
+          aria-current={isCourse ? "page" : undefined}
           className={cn(
             buttonVariants({ variant: isCourse ? "secondary" : "ghost", size: "lg" }),
             "rounded-full",
@@ -32,6 +33,7 @@ export default function Navigation() {
         </Link>
         <Link
           to="/blog"
+          aria-current={isBlog ? "page" : undefined}
           className={cn(
             buttonVariants({ variant: isBlog ? "secondary" : "ghost", size: "lg" }),
             "rounded-full",
@@ -43,6 +45,7 @@ export default function Navigation() {
         </Link>
         <Link
           to="/essays"
+          aria-current={isEssays ? "page" : undefined}
           className={cn(
             buttonVariants({ variant: isEssays ? "secondary" : "ghost", size: "lg" }),
             "rounded-full",
@@ -54,6 +57,7 @@ export default function Navigation() {
         </Link>
         <Link
           to="/media"
+          aria-current={isMedia ? "page" : undefined}
           className={cn(
             buttonVariants({ variant: isMedia ? "secondary" : "ghost", size: "lg" }),
             "rounded-full",
@@ -65,6 +69,7 @@ export default function Navigation() {
         </Link>
         <Link
           to="/hackathons"
+          aria-current={isHackathons ? "page" : undefined}
           className={cn(
             buttonVariants({ variant: isHackathons ? "secondary" : "ghost", size: "lg" }),
             "rounded-full",
