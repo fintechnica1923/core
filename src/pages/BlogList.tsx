@@ -33,7 +33,11 @@ export default function BlogList() {
   return (
     <div className="mx-auto max-w-[680px] px-4 sm:px-6">
 
+      <h1 className="sr-only">Лента</h1>
+
+      <label htmlFor="blog-search" className="sr-only">Поиск по публикациям</label>
       <Input
+        id="blog-search"
         placeholder="Поиск…"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -41,10 +45,12 @@ export default function BlogList() {
       />
 
       {allTags.length > 0 && (
-        <div className="mb-12 flex flex-wrap gap-2">
+        <div role="group" aria-label="Фильтр по тегам" className="mb-12 flex flex-wrap gap-2">
           <Badge
+            render={<button type="button" />}
             variant={activeTag === null ? "default" : "secondary"}
             className="cursor-pointer rounded-full px-3 py-1 text-xs"
+            aria-pressed={activeTag === null}
             onClick={() => setActiveTag(null)}
           >
             Все
@@ -52,8 +58,10 @@ export default function BlogList() {
           {(showAllTags ? allTags : allTags.slice(0, 14)).map((tag) => (
             <Badge
               key={tag}
+              render={<button type="button" />}
               variant={activeTag === tag ? "default" : "secondary"}
               className="cursor-pointer rounded-full px-3 py-1 text-xs"
+              aria-pressed={activeTag === tag}
               onClick={() => setActiveTag(activeTag === tag ? null : tag)}
             >
               #{tag}
@@ -61,6 +69,7 @@ export default function BlogList() {
           ))}
           {!showAllTags && allTags.length > 14 && (
             <Badge
+              render={<button type="button" />}
               variant="secondary"
               className="cursor-pointer rounded-full px-3 py-1 text-xs"
               onClick={() => setShowAllTags(true)}
@@ -138,9 +147,11 @@ export default function BlogList() {
             </div>
           </article>
         ))}
-        <p className="text-muted-foreground py-12 text-center text-lg">
-          Ничего не найдено
-        </p>
+        {filtered.length === 0 && (
+          <p className="text-muted-foreground py-12 text-center text-lg" role="status">
+            Ничего не найдено
+          </p>
+        )}
       </div>
     </div>
   )
