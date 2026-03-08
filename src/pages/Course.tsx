@@ -71,7 +71,7 @@ export default function Course() {
   return (
     <div className="mx-auto max-w-[680px] px-4 sm:px-6">
       <div className="space-y-12">
-        <Accordion type="multiple" defaultValue={["item-0"]} className="w-full">
+        <Accordion openMultiple defaultValue={["item-0"]} className="w-full">
           {lectures.map((lecture, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger className="hover:no-underline py-6">

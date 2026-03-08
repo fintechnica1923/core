@@ -1,8 +1,6 @@
-import { useState } from "react"
 import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import rawPosts from "virtual:hackathon-posts"
-import { Input } from "@/components/ui/input"
 import YouTubeEmbed from "@/components/YouTubeEmbed"
 
 function slugify(name: string) {

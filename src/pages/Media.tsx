@@ -1,7 +1,6 @@
 import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { getAllMedia } from "@/lib/media"
-import { Separator } from "@/components/ui/separator"
 import YouTubeEmbed from "@/components/YouTubeEmbed"
 
 const mediaPosts = getAllMedia()
