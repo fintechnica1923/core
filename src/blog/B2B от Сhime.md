@@ -6,4 +6,4 @@ https://enterprise.chime.com/blog/chime-workplace-employee-financial-wellness-pl
 
 _Джейсон Ли_
 
-#chime #fintechnica 
+#chime #fintechnica
