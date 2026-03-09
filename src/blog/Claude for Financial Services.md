@@ -1,6 +1,6 @@
 Последние пару недель **Сlaude** больше всех всплывает в новостной повестке. У них стратегия захватывать сердца специалистов разных функций, чтобы те продавали его в свои корпорации.
 
-На канале **Anthropic** пачка новых видео в аккуратдля просмотра в воскресный вечер: 
+На канале **Anthropic** пачка новых видео в аккуратдля просмотра в воскресный вечер:
 1. Claude for Financial Services Keynote – 1:02:47
 2. Building AI agents with Claude in Amazon Bedrock – 27:16
 3. Building AI agents with Claude in Google Cloud's Vertex AI – 30:22
@@ -22,4 +22,4 @@
 
 Я конечно же начну прям с первого 💳 https://www.youtube.com/@anthropic-ai/videos
 
- #ai #claude #fintechnica 
+ #ai #claude #fintechnica

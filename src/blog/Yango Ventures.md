@@ -19,4 +19,4 @@ Luable — это быстро растущая платформа для бан
 
 https://luable.app/
 
-#yandex #fintechnica 
+#yandex #fintechnica

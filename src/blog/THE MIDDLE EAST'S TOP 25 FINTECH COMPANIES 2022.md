@@ -28,4 +28,4 @@
 
 Источник: https://www.forbesmiddleeast.com/lists/the-middle-easts-top-25-fintech-companies-2022/
 
-#refs #middleeast #fintechnica 
+#refs #middleeast #fintechnica

@@ -6,4 +6,4 @@
 
 Прекрасный контент для субботнего вечера 🇰🇿
 
-#cbdc #fintechnica 
+#cbdc #fintechnica

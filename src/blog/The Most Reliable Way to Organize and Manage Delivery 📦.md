@@ -9,4 +9,4 @@
 
 https://a16z.com/2022/07/26/investing-in-nash/
 
-#a16z #venture #fintechnica 
+#a16z #venture #fintechnica
