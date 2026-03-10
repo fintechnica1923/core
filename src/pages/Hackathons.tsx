@@ -27,9 +27,6 @@ const posts = (rawPosts as { fileName: string; content: string }[]).map((r) => (
 export default function Hackathons() {
   return (
     <div className="mx-auto max-w-[680px] px-4 sm:px-6">
-      <h2 className="mb-8 text-2xl font-medium leading-snug tracking-tight">
-        Хакатоны
-      </h2>
       <div className="space-y-16">
         {posts.map((post) => (
           <article key={post.slug}>
@@ -37,6 +34,12 @@ export default function Hackathons() {
               <Markdown
                 remarkPlugins={[remarkGfm]}
                 components={{
+                  h1: ({ children }) => (
+                    <h2 className="text-2xl font-medium leading-snug tracking-tight">{children}</h2>
+                  ),
+                  h2: ({ children }) => (
+                    <h2 className="text-2xl font-medium leading-snug tracking-tight">{children}</h2>
+                  ),
                   img: ({ src, alt, ...props }) => (
                     <img src={src} alt={alt ?? ""} loading="lazy" {...props} />
                   ),

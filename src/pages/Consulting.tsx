@@ -8,7 +8,7 @@ export default function Consulting() {
         {/* 01 КОНЦЕПЦИЯ */}
         <section>
           <div className="mb-6 flex items-center gap-4">
-            <h2 className="text-xl font-medium tracking-tight">КОНЦЕПЦИЯ</h2>
+            <h2 className="text-2xl font-medium leading-snug tracking-tight">КОНЦЕПЦИЯ</h2>
           </div>
           <div className="space-y-8">
             <div>
@@ -70,7 +70,7 @@ export default function Consulting() {
         {/* 02 ПОРТФЕЛЬ */}
         <section>
           <div className="mb-6 flex items-center gap-4">
-            <h2 className="text-xl font-medium tracking-tight">ПОРТФЕЛЬ</h2>
+            <h2 className="text-2xl font-medium leading-snug tracking-tight">ПОРТФЕЛЬ</h2>
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="rounded-xl border bg-card p-6">
@@ -93,7 +93,7 @@ export default function Consulting() {
         {/* 03 УСЛУГИ */}
         <section>
           <div className="mb-6 flex items-center gap-4">
-            <h2 className="text-xl font-medium tracking-tight">УСЛУГИ</h2>
+            <h2 className="text-2xl font-medium leading-snug tracking-tight">УСЛУГИ</h2>
           </div>
           <div className="space-y-8">
             <div>
@@ -138,7 +138,7 @@ export default function Consulting() {
         {/* 04 ЭКСПЕРТИЗА */}
         <section>
           <div className="mb-6 flex items-center gap-4">
-            <h2 className="text-xl font-medium tracking-tight">ЭКСПЕРТИЗА</h2>
+            <h2 className="text-2xl font-medium leading-snug tracking-tight">ЭКСПЕРТИЗА</h2>
           </div>
           <div className="grid gap-8 sm:grid-cols-2">
             <div>
@@ -165,7 +165,7 @@ export default function Consulting() {
         {/* 05 МАТЕРИАЛЫ */}
         <section>
           <div className="mb-6 flex items-center gap-4">
-            <h2 className="text-xl font-medium tracking-tight">МАТЕРИАЛЫ</h2>
+            <h2 className="text-2xl font-medium leading-snug tracking-tight">МАТЕРИАЛЫ</h2>
           </div>
           <div className="space-y-6">
             <div className="flex items-start justify-between gap-4">

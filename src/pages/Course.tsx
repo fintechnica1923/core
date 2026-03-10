@@ -76,9 +76,12 @@ export default function Course() {
           {lectures.map((lecture, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
               <AccordionTrigger className="hover:no-underline py-6">
-                <span className="text-xl font-medium leading-snug tracking-tight text-left">
+                <h2 className="text-2xl font-medium leading-snug tracking-tight text-left m-0 flex items-center gap-2">
                   {lecture.title}
-                </span>
+                  {(lecture.title === "Крипта" || lecture.title === "Антифрод") && (
+                    <span>🔒</span>
+                  )}
+                </h2>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="flex gap-2 mb-4">
@@ -91,9 +94,9 @@ export default function Course() {
                     />
                   ))}
                 </div>
-                <p className="text-lg leading-relaxed pb-6">
-                  {lecture.description}
-                </p>
+                <div className="prose prose-invert max-w-none">
+                  <p>{lecture.description}</p>
+                </div>
               </AccordionContent>
             </AccordionItem>
           ))}
@@ -101,12 +104,12 @@ export default function Course() {
       </div>
       <div className="fixed bottom-8 left-0 right-0 flex justify-center pointer-events-none z-50">
         <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdpcGvoRDAibkPQo9WpGecvxnBAvuewK92ltN_8T4jxJAEE-g/viewform?usp=send_form"
+          href="https://t.me/mrkapas"
           target="_blank"
           rel="noopener noreferrer"
-          className={buttonVariants({ size: "lg" }) + " !rounded-full pointer-events-auto shadow-lg px-5"}
+          className={buttonVariants({ size: "lg" }) + " !rounded-full pointer-events-auto shadow-lg px-5 !bg-[#F01413] hover:!bg-[#d01212] !border-[#F01413] !text-black"}
         >
-          Вступить в сообщество
+          Получить доступ
         </a>
       </div>
     </div>

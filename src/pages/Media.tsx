@@ -16,7 +16,7 @@ export default function Media() {
                 remarkPlugins={[remarkGfm]}
                 components={{
                   h1: ({ children }) => (
-                    <h2 className="!text-2xl !font-semibold">{children}</h2>
+                    <h2 className="text-2xl font-medium leading-snug tracking-tight">{children}</h2>
                   ),
                   img: ({ src, alt, ...props }) => (
                     <img src={src} alt={alt ?? ""} loading="lazy" {...props} />
