@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { Volume2 } from "lucide-react"
@@ -13,11 +13,15 @@ import AudioWaveform from "@/components/AudioWaveform"
 
 const posts = getAllPosts()
 
+const PAGE_SIZE = 10
+
 export default function BlogList() {
   const [search, setSearch] = useState("")
   const [activeTag, setActiveTag] = useState<string | null>(null)
   const [showAllTags, setShowAllTags] = useState(false)
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
   const { speakingSlug, speak } = useSpeech()
+  const sentinelRef = useRef<HTMLDivElement>(null)
 
   const allTags = [...new Set(posts.flatMap((p) => p.tags))].sort()
 
@@ -29,6 +33,29 @@ export default function BlogList() {
     const matchesTag = !activeTag || post.tags.includes(activeTag)
     return matchesSearch && matchesTag
   })
+
+  const visible = filtered.slice(0, visibleCount)
+  const hasMore = visibleCount < filtered.length
+
+  const handleFilterChange = (tag: string | null) => {
+    setActiveTag(tag)
+    setVisibleCount(PAGE_SIZE)
+  }
+
+  useEffect(() => {
+    const el = sentinelRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((c) => c + PAGE_SIZE)
+        }
+      },
+      { rootMargin: "200px" }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [filtered.length])
 
   return (
     <div className="mx-auto max-w-[680px] px-4 sm:px-6">
@@ -51,7 +78,7 @@ export default function BlogList() {
             variant={activeTag === null ? "default" : "secondary"}
             className="cursor-pointer rounded-full px-3 py-1 text-xs"
             aria-pressed={activeTag === null}
-            onClick={() => setActiveTag(null)}
+            onClick={() => handleFilterChange(null)}
           >
             Все
           </Badge>
@@ -62,7 +89,7 @@ export default function BlogList() {
               variant={activeTag === tag ? "default" : "secondary"}
               className="cursor-pointer rounded-full px-3 py-1 text-xs"
               aria-pressed={activeTag === tag}
-              onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+              onClick={() => handleFilterChange(activeTag === tag ? null : tag)}
             >
               #{tag}
             </Badge>
@@ -81,7 +108,7 @@ export default function BlogList() {
       )}
 
       <div className="space-y-16">
-        {filtered.map((post) => (
+        {visible.map((post) => (
           <article key={post.slug}>
             <div className="mb-3 flex items-start justify-between gap-3">
               <h2 className="text-2xl font-medium leading-snug tracking-tight">
@@ -152,6 +179,7 @@ export default function BlogList() {
             Ничего не найдено
           </p>
         )}
+        {hasMore && <div ref={sentinelRef} className="h-1" />}
       </div>
     </div>
   )
