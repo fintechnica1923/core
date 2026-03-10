@@ -1,5 +1,6 @@
 import Markdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import rehypeRaw from "rehype-raw"
 import { getAllMedia } from "@/lib/media"
 import YouTubeEmbed from "@/components/YouTubeEmbed"
 
@@ -14,6 +15,7 @@ export default function Media() {
             <div className="prose prose-invert max-w-none overflow-hidden break-words prose-a:break-all prose-a:text-foreground prose-a:underline prose-a:decoration-foreground/30 prose-a:underline-offset-4 hover:prose-a:decoration-foreground/60 prose-img:rounded-xl prose-pre:overflow-x-auto">
               <Markdown
                 remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
                 components={{
                   h1: ({ children }) => (
                     <h2 className="text-2xl font-medium leading-snug tracking-tight">{children}</h2>
@@ -25,6 +27,18 @@ export default function Media() {
                     <YouTubeEmbed href={href} {...props}>
                       {children}
                     </YouTubeEmbed>
+                  ),
+                  iframe: ({ src, width, height, allow, ...props }) => (
+                    <div className="relative w-full overflow-hidden rounded-xl" style={{ paddingBottom: "56.25%" }}>
+                      <iframe
+                        src={src}
+                        allow={allow}
+                        className="absolute inset-0 h-full w-full"
+                        frameBorder="0"
+                        scrolling="no"
+                        {...props}
+                      />
+                    </div>
                   ),
                 }}
               >

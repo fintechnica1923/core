@@ -14,4 +14,4 @@
 
 «Основная задача продакта — очень быстро ошибиться. Это казино. Ты играешь на чужие деньги и на свою репутацию».
 
-https://youtu.be/HFsPqbN8E-E?si=5DztS1iq188Modx5
+<iframe width="560" height="315" src="https://runtime.video.cloud.yandex.net/player/video/vplvlntkbycofwiunozq?autoplay=0&mute=0" allow="autoplay; fullscreen; accelerometer; gyroscope; picture-in-picture; encrypted-media" frameborder="0" scrolling="no"></iframe>
